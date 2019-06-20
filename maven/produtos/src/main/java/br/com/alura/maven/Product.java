@@ -12,7 +12,11 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return this.name +" - "+ this.price;
+		return this.name +" - "+ this.getPrice();
+	}
+	
+	public double getPrice() {
+		return price*1.1;
 	}
 
 }

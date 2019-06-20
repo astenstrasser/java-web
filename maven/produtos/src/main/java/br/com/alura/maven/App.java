@@ -1,13 +1,10 @@
 package br.com.alura.maven;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class App {
+	public static void main(String[] args) {
+
+		Product p1 = new Product("T-shirt", 50);
+		System.out.println(p1);
+		
+	}
 }
