@@ -17,15 +17,27 @@ public class NovaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
 		String nomeEmpresa = request.getParameter("nome");
-		out.println("<html><body>Cadastro Nova Empresa " +nomeEmpresa+" !</body></html>");
-		System.out.println("servlet nova empresa chamado!");
+
+		Empresa empresa = new Empresa();
+		empresa.setName(nomeEmpresa);
 		
+//		faking a database
+		Banco banco = new Banco();
+		banco.adiciona(empresa);
+		
+		System.out.println(banco.getEmpresas());
+
+		out.println("<html><body>Cadastro Nova Empresa " + nomeEmpresa + " !</body></html>");
+		System.out.println("servlet nova empresa chamado!");
+
 	}
 
 }
