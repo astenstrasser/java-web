@@ -1,6 +1,8 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +20,12 @@ public class NovaEmpresaServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		PrintWriter out = response.getWriter();
+		String nomeEmpresa = request.getParameter("nome");
+		out.println("<html><body>Cadastro Nova Empresa " +nomeEmpresa+" !</body></html>");
+		System.out.println("servlet nova empresa chamado!");
+		
 	}
 
 }
