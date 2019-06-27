@@ -29,17 +29,17 @@ public class NovaEmpresaServlet extends HttpServlet {
 
 		Empresa empresa = new Empresa();
 		empresa.setName(nomeEmpresa);
-		
+
 //		faking a database
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
-		
+
 		System.out.println("servlet nova empresa chamado!");
 
 		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
 		request.setAttribute("empresa", empresa.getNome());
 		rd.forward(request, response);
-		
+
 	}
 
 }
