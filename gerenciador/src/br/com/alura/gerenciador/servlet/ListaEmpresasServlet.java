@@ -31,7 +31,7 @@ public class ListaEmpresasServlet extends HttpServlet {
         out.println("<ul>");
 
         for (Empresa empresa : lista) {
-        	out.println("<li>"+empresa.getName()+"</li>");
+        	out.println("<li>"+empresa.getNome()+"</li>");
 		}
         
         out.println("</ul>");

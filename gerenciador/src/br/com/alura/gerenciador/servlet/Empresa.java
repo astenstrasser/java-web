@@ -13,7 +13,7 @@ public class Empresa {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getNome() {
 		return name;
 	}
 
